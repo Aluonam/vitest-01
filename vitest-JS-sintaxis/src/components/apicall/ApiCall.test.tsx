@@ -43,6 +43,6 @@ test('Mensaje de error si falla', async ()=>{
     render(<ApiCall></ApiCall>)
 
     await waitFor(()=>{
-        expect(screen.getByText(/error al obtener datos/i)).toBeInTheDocument();
+        expect(screen.getByText(/error al obtener los datos/i)).toBeInTheDocument();
     })
 })
