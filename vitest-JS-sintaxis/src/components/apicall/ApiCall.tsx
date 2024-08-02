@@ -5,7 +5,7 @@ interface DataItem {
   name: string;
 }
 
-const DataFetcher: React.FC = () => {
+const ApiCall: React.FC = () => {
   const [data, setData] = useState<DataItem[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,4 +40,4 @@ const DataFetcher: React.FC = () => {
   );
 };
 
-export default DataFetcher;
+export default ApiCall;
