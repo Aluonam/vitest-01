@@ -1,8 +1,31 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una vez realizado el componente:
 
-Currently, two official plugins are available:
+Paso 1: Planificar las Pruebas
+Escenarios de Prueba
+Caso de Éxito: La API devuelve datos correctamente, y los datos se muestran en el componente.
+Caso de Error: La API devuelve un error, y el componente muestra un mensaje de error.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Paso 2: Configurar el Entorno de Pruebas
+Mock de fetch
+Antes de escribir las pruebas, es crucial que podamos simular las respuestas de la API. Para esto, usaremos un mock de fetch.
+
+Paso 3: Escribir las Pruebas
+Vamos a escribir las pruebas para los escenarios planificados.
+
+src/components/DataFetcher.test.tsx
+
+Mock de fetch: Utilizamos vi.fn() para crear un mock de la función global fetch. Esto nos permite simular diferentes respuestas de la API sin hacer realmente la solicitud.
+
+**Prueba de Caso de éxito**
+
+Configuramos el mock de fetch para devolver una respuesta exitosa.
+Usamos *waitFor* para esperar hasta que los datos se rendericen en el DOM.
+Verificamos que los elementos esperados estén en el documento.
+
+**Prueba de Caso de Error:**
+
+Configuramos el mock de fetch para simular un error en la respuesta.
+Usamos waitFor para esperar hasta que el mensaje de error se muestre en el DOM.
+Verificamos que el mensaje de error esperado esté presente.
